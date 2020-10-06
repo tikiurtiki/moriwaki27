@@ -1,0 +1,59 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+
+.main-visual {
+  position: relative;
+  &__cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.3) 100%);
+  }
+  &__visual {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    // padding-bottom: 56.25%;
+    & > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.about{
+  background-position: 150% 50%;
+  background-size: 70%;
+
+  &__inner{
+    
+  }
+
+}
+
+
+.feature{
+  &__cards{
+    flex-direction: row;
+  }
+  &__card{
+    margin-right: 20px;
+  }
+}
+
+.promotion-video{
+  &__inner{
+    width: 70%;
+    max-width: $contentMaxWidth;
+  }
+}

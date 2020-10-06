@@ -1,0 +1,416 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+body {
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+// 画面幅設定
+.content-width80 {
+  width: 80%;
+  max-width: $contentMaxWidth;
+  margin: 0 auto;
+}
+.content-width90 {
+  width: 90%;
+  max-width: $contentMaxWidth;
+  margin: 0 auto;
+}
+
+.header {
+  height: $pcHeaderHeight;
+  &__logo {
+    width: 280px;
+    height: 22px;
+  }
+
+  // お問い合わせページのボタン
+  &__btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+// ハンバーガーメニュー
+.humberger-menu {
+  transition: opacity 0.5s;
+  &:hover {
+    opacity: 0.6;
+  }
+  &__btn {
+    padding-top: 8px;
+    & > span {
+      width: 43px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// ハンバーガーメニューがクリックされたとき
+.menu-open {
+  & .humberger-menu {
+    &__btn {
+      & > span {
+        &:nth-child(1) {
+          transform: translateY(10px) rotate(135deg);
+        }
+        &:nth-child(3) {
+          transform: translateY(-10px) rotate(-135deg);
+        }
+      }
+    }
+  }
+}
+
+// グローバルメニュー
+.global-nav {
+  position: fixed;
+  z-index: 2000;
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+  background-color: $White;
+  &__container {
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    width: 100%;
+    margin: 0 auto;
+    transform: translate(-50%, -65%);
+  }
+
+  &__list {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  &__link {
+    font-family: dnp-shuei-mgothic-std, sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    // btnに上書き
+    width: 70%;
+  }
+}
+
+// メインビジュアル
+.main-visual {
+  position: relative;
+  &__cover {
+    display: none;
+  }
+
+  &__visual {
+    position: relative;
+    width: 63%;
+    height: 600px;
+    margin: 0 0 0 auto;
+  }
+
+  &__catch-copy {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 300;
+    margin-bottom: 20px;
+    // font-size: 1.3rem;
+    &--main {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__scroll-btn {
+    padding-top: 50px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    z-index: 500;
+  }
+  &__recommendation {
+    // background-color: $bgColor;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 1000;
+
+    transform: rotate(-3deg);
+    padding: 0.5em 1em;
+    border: solid 3px rgba(0,0,0,.1);
+    border-radius: 8px;
+    &__title {
+      line-height: 40px;
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      // padding: 0 9px;
+      height: 40px;
+      margin: 0 50px 20px;
+      padding: 0 2rem;
+      text-align: center;
+      background: $reserve-btn;
+      font-size: 1.4rem;
+      color: #fff;
+
+      &--ribbon {
+        position: relative;
+        display: block;
+        font-weight: bold;
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        display: block;
+        height: 0;
+        content: "";
+        border: 20px solid $reserve-btn;
+      }
+
+      &::before {
+        left: -30px;
+        border-left-width: 10px;
+        border-left-color: transparent;
+      }
+
+      &::after {
+        right: -30px;
+        border-right-width: 10px;
+        border-right-color: transparent;
+      }
+
+      &--point {
+        font-family: "Caveat", cursive;
+        font-size: 1.7rem;
+      }
+    }
+
+    &__text-wrapper {
+      padding: 30px 10px 10px 10px;
+    }
+
+    &__text {
+      position: relative;
+      padding-left: 20px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.1em;
+        left: -3px;
+        width: 15px;
+        height: 15px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-radius: 50%;
+        background-color: $GlobalTextColor;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0.5em;
+        left: 1px;
+        transform: rotate(45deg);
+        width: 4px;
+        height: 4px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+    }
+    .balloon3-right-btn {
+      position: absolute;
+      z-index: 500;
+      top: -100%;
+      right: 3%;
+      display: inline-block;
+      // margin: 1.5em 15px 1.5em 0;
+      padding: 30px 5px;
+      width: 120px;
+      height: 120px;
+      text-align: center;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: #c4c4c4;
+      border-radius: 50%;
+      box-sizing: border-box;
+      transform: rotate(15deg);
+    }
+  
+    .balloon3-right-btn:before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 20px;
+      margin-top: -15px;
+      border: 15px solid transparent;
+      border-left: 15px solid #c4c4c4;
+      z-index: 0;
+      transform: rotate(15deg);
+    }
+  }
+}
+
+// PV
+.promotion-video {
+  &__inner {
+    max-width: 600px;
+    padding: 50px 0;
+  }
+  &__title {
+    margin-bottom: 30px;
+    & > span {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+
+.about{
+  background-size: 40%;
+  background-position: 80% 50%;
+  &__inner{
+  }
+  &__text{
+  }
+}
+
+.video-letter {
+  &__inner {
+
+  }
+  &__title {
+  }
+
+  &__text-wrapper{
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  &__text{
+  }
+
+
+  &__cards {
+    display: flex;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  &__card {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__video-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .card {
+    &__textarea {
+      width: 90%;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+    &__text {
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+.reserve-bottom-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  text-align: center;
+  visibility: hidden;
+  &__inner {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  &__btn {
+    // btnに上書き
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
+    padding: 14px 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  &__balloon {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    display: inline-block;
+    margin: 1.5em 0;
+    padding: 3px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    font-size: 12px;
+    background: #c4c4c4;
+    color: #fff;
+    border-radius: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    transform: rotate(-8deg);
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -21px;
+      right: 37px;
+      margin-top: -15px;
+      border: 15px solid transparent;
+      border-left: 15px solid #c4c4c4;
+      z-index: 0;
+      transform: rotate(80deg);
+    }
+  }
+  .inview & {
+    visibility: visible;
+    &__inner {
+      visibility: visible;
+      opacity: 0.6;
+      background-color: #fff;
+    }
+    &__btn {
+      visibility: visible;
+      opacity: 1;
+    }
+    &__balloon {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.message {
+  &__inner {
+  }
+}
